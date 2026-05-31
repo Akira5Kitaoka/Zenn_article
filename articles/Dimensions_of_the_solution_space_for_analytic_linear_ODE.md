@@ -1,0 +1,379 @@
+# 導入
+
+線形常微分方程式の先頭項の係数がどの点でも$0$にならないとき，この微分方程式の解空間の次元は，その微分方程式の階数に一致するという定理が知られています．では，先頭項の係数が$0$になる点がある場合の次元はどうなるのでしょうか．今回は，係数が実解析的な場合，***線形常微分方程式の解空間の次元と，その微分方程式の階数との誤差が，先頭係数の零点の位数で評価できること***を紹介します．
+
+:::message
+注釈
+今回は常微分方程式は全て線形なものを考えるので，単に微分方程式と書きます．また，係数は実解析的なものとして取り扱います．
+:::
+
+
+# 微分方程式
+
+開区間$I \subset \mathbb{R}$上の微分方程式$\sum_{i=0}^m a_i (x) \frac{d^i}{dx^i} u = 0$を考えてみましょう．ここで，$a_i (x) \, (i = 0 , \ldots ,m)$は$I$の上で実解析的な関数です．1階の微分作用素$d/dx$を単に$\partial$と書いてしまいます．そうすると方程式は, $\sum_{i=0}^m a_i (x) \partial^i u = 0$とかけます．さらに，$P = \sum_{i=0}^m a_i (x) \partial^i$と書いてしまって，これが関数$u$に作用していると思うと方程式は$P u = 0$と簡単にかけます．
+
+さて，方程式$P(x ,\partial) u = 0$の解$u$はどういう性質を仮定するのが自然でしょうか？最低でも，$u$は$m$階微分可能な関数でないと，微分は定義できません．なので，区間$I$の上で$m$階微分可能な関数の集合$F^m(I)$の上で考える場合もあるでしょう．ただし，$F^0 (I) = \partial F^1 (I)$，すなわち，$F^0 (I)$を$1$階微分可能な関数を微分して得られる関数の集合とします．このとき，空間$F^m(I)$の上の方程式$P u = 0$は
+
+$$
+    \mathrm{Ker} (P \colon F^m (I) \to F^0 (I))
+$$
+
+と書けます．
+
+他にも関数の集合を考える場合があります．もう少し関数$u$の性質を仮定して，区間$I$の上で$m$階連続微分可能な関数の集合$C^m(I)$の上で考える場合もあるでしょう．このとき，空間$C^m(I)$の上の方程式$P u = 0$は
+
+$$
+    \mathrm{Ker} (P \colon C^m (I) \to C^0 (I))
+$$
+
+と書けます．
+
+
+方程式の解空間の包含関係を確認しておきましょう．関数の集合の包含関係は
+
+$$
+    F^m (I)  \supset C^m (I) 
+$$
+
+です．従って，それぞれ場合での解空間の包含関係は，
+ 
+$$
+    \mathrm{Ker} (P \colon F^m (I) \to F^0 (I)) 
+    \supset
+    \mathrm{Ker} (P \colon C^m (I) \to C^0 (I))
+$$
+
+です．
+
+さて，それぞれの上での解空間では次元はどうなのでしょうか？まず，先頭項の係数$a_m (x)$が区間$I$で$0$になる点が存在しない場合で，よく知られている命題を復習します．
+
+# 先頭項の係数が区間$I$で$0$になる点が存在しない場合
+
+この場合，方程式$P u = 0$は両辺を$a_m (x)$で割って
+
+$$
+    \partial^m u + \sum_{i=0}^{m-1} \frac{a_i (x)}{a_m(x)} \partial^i u = 0 
+$$
+
+となります．第2項を右辺に移項すると，
+
+$$
+    \partial^m u = - \sum_{i=0}^{m-1} \frac{a_i (x)}{a_m(x)} \partial^i u  
+$$
+
+となります．第2項は，微分可能な関数になっているので，右辺は連続になります．従って$\partial^m u$は連続になります．つまり，$u \in C^m (I)$となります．実は，次の命題があります．
+
+> 命題1. (C.f. \[[Sak2015],定理2.8\])
+> 先頭項の係数$a_m (x)$が区間$I$で$0$になる点が存在しない場合，
+>
+> $$
+ \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I)) = m .
+  $$
+
+:::message
+注釈
+証明は常微分方程式の初期値問題の解の存在定理と一意性から従います．たとえば，\[[Sak2015]\]をご覧ください．
+:::
+
+命題1と先ほどの考察から次が得られます．
+
+> 系2.
+> 先頭項の係数$a_m (x)$が区間$I$で$0$になる点が存在しない場合，
+>
+> $$
+ \dim \mathrm{Ker} (P \colon F^m (I) \to F^0 (I)) = \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I))= m .
+  $$
+
+つまり，$m$階微分可能な関数の集合$F^m (I)$で考えても，$m$階連続微分可能な関数の集合$C^m (I)$で考えても，解空間は同じということになります．
+
+# 一般の場合
+
+一般の場合，解空間$\mathrm{Ker} (P \colon F^m (I) \to F^0 (I))$と解空間$\mathrm{Ker} (P \colon C^m (I) \to C^0 (I))$は一致するのでしょうか？また，次元は階数$m$になるのでしょうか？
+
+答えは，一般に一致するとは限りませんし，次元は$m$になるとは限りません．具体例を見てみましょう．
+
+## 階数$m$より，大きくなる例
+
+区間$I = \mathbb{R}$とします．$P u = x \partial u  - 2 u = 0$という解空間を考えてみましょう．$m=1$階微分可能な関数の集合$F^1 (I)$の上で考えてみると，解空間$\mathrm{Ker} (P \colon F^1 (I) \to F^0 (I))$は
+
+$$
+u_1 =
+\begin{cases}
+ x^2 , & x \geq 0, \\
+ 0 & x <0,
+\end{cases}
+\quad
+u_2 =
+\begin{cases}
+ 0 , & x \geq 0, \\
+ x^2  & x <0,
+\end{cases}
+$$
+
+の線形和で書けることがわかります．$2$次元です．
+
+一方で，$1$階連続微分可能な関数の集合$C^1 (I)$の上で考えてみると，解空間$\mathrm{Ker} (P \colon C^1 (I) \to C^0 (I))$は
+
+$$
+    u_3 = x^2
+$$
+
+の線形和で書けます．$1$次元です．
+
+まとめると，
+
+$$
+\begin{align*}
+2 & =
+\dim \mathrm{Ker} (P \colon F^m (I) \to F^0 (I)) 
+\\
+& > \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I)) =1 (=m)
+\end{align*}
+$$
+
+となり，異なります．
+
+## 階数$m$より，小さくなる例
+
+区間$I = \mathbb{R}$とします．$P u = x \partial u  + u = 0$という解空間を考えてみましょう．まず，$(0,\infty)$の上での解空間$\mathrm{Ker} (P \colon F^1 ((0,\infty)) \to F^0 ((0,\infty)))$は，命題 2より，
+
+$$
+\begin{equation}
+    u_1 =  x^{-1} \tag{1}
+\end{equation}
+$$
+
+の線形和として書けます．同様に，$(-\infty , 0)$の上での解空間$\mathrm{Ker} (P \colon F^1 ((-\infty , 0)) \to F^0 (( -  \infty , 0)))$は，$(1)$の線形和として書けます．
+
+では，$m=1$階微分可能な関数の集合$F^1 (I)$の上で考えてみると，解空間$\mathrm{Ker} (P \colon F^1 (I) \to F^0 (I))$の元は，$x=0$で連続でないといけません．しかし，解空間を$(-\infty , 0)$や$( 0, \infty )$に制限するとそれぞれ，$(1)$のスカラー倍で書けないといけません．点$x=0$で連続になるには，$u=0$しかないことがわかります．
+
+まとめると，
+
+$$
+\begin{align*}
+    m = 1 & >
+    \dim \mathrm{Ker} (P \colon F^m (I) \to F^0 (I)) 
+    \\
+    & = \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I))
+\end{align*}
+$$
+
+となり，階数$m$より解空間の次元が小さくなります．
+
+## 命題1を一般化する
+
+どれくらい次元が異なるのかが，気になるところである．それの回答を与えるのが，次の定理である．
+
+> 定理3. (\[Kit2014\])
+>
+> $$ 
+    \left| \dim \mathrm{Ker} (P \colon F^m (I) \to F^0 (I)) - m \right| \leq \sum_{x \in I} \mathrm{ord}_x a_m 
+  $$
+>
+> $$ 
+    \left| \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I)) - m \right| \leq \sum_{x \in I} \mathrm{ord}_x a_m 
+  $$
+>
+> ここで，$\mathrm{ord}_x a_m$は，点$x$での$a_m$の零点の位数である．
+
+
+ここで，零点の位数とは，点$x$でTaylor展開したときの最初に出てくる次数である．例えば，
+
+$$
+    \mathrm{ord}_0 x^2 = 2,
+    \quad \mathrm{ord}_1 x(x-1) = 1,
+    \mathrm{ord}_1 x^2 = 0
+$$
+
+である．
+
+定理3が主張することは，解空間の次元と階数$m$の誤差は先頭項$a_m$の$I$上に存在する零点の位数の和になることを主張する．また，$a_m$の$I$上の零点の位数が有限の場合，解空間の次元は有限であることが従う．
+
+:::message
+注釈
+定理3の証明はAppendixに記載する．
+:::
+
+# まとめ，今後の課題
+
+今回は，係数が実解析的な場合，線形常微分方程式の解空間の次元と，その微分方程式の階数との誤差が，先頭係数の零点の位数で評価できることを紹介しました．
+
+今後の課題として，この誤差を正確に捉えるには，どのようにすればよいのかが挙げられます．
+
+最後まで読んでいただき，ありがとうございました．
+
+
+# 参考文献
+
+[Kit2014] 北岡 旦, 超函数 - Schwartz Distribution / Sato Hyperfunction -, 数学のなかま Vol. 55, (2014).
+
+[Kom1971] H.Komatsu, On the index of Ordinary differential operators, J. Fac. Sci. Univ. Tokyo, Sec. IA, 18 (1971), 379 – 398.
+
+\[[KY1973][KY1973]\] 小松 彦三郎, 矢野 環, 佐藤超函数論入門, 数理解析研究所講究録, 188巻, (1973).
+
+\[[Sak2015][Sak2015]\] 坂井 秀隆, 大学数学の入門10 常微分方程式, 東京大学出版会, (2015).
+
+\[[Sat1958][Sat1958]\] 佐藤 幹夫, 超関数の理論, 数学, 10, (1958), no. 1, 1-27.
+
+[KY1973]:https://repository.kulib.kyoto-u.ac.jp/dspace/handle/2433/107215
+
+[Sak2015]:https://www.utp.or.jp/book/b307096.html
+
+[Sat1958]:https://www.jstage.jst.go.jp/article/sugaku1947/10/1/10_1_1/_article/-char/ja/
+
+# Appendix 定理3の証明
+
+## 定理3再掲
+
+まず，目標である定理3を再掲します．
+
+> 定理3. ([Kit2014])
+>
+> $$ 
+    m - \sum_{x \in I} \mathrm{ord}_x a_m
+    \leq \dim \mathrm{Ker} (P \colon F^m (I) \to F^0 (I)) 
+    \leq m + \sum_{x \in I} \mathrm{ord}_x a_m 
+  $$
+>
+> $$ 
+    m - \sum_{x \in I} \mathrm{ord}_x a_m
+    \leq \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I)) 
+    \leq m + \sum_{x \in I} \mathrm{ord}_x a_m 
+  $$
+>
+
+## 下からの評価の証明
+
+まず，下からの評価についてです．解空間を実解析的な関数に限定する場合を考えます．区間$I$の上で実解析的な関数の集合$\mathcal{A}(I)$とします．このとき，空間$\mathcal{A}(I)$の上の方程式$P u = 0$は
+
+$$
+    \mathrm{Ker} (P \colon \mathcal{A} (I) \to \mathcal{A} (I))
+$$
+
+と書けます．また，微分作用素$P$で写らない関数に相当するの集合を
+
+$$
+    \mathrm{Coker} (P \colon \mathcal{A} (I) \to \mathcal{A} (I))
+    = \mathcal{A} (I) / \mathrm{Im} (P \colon \mathcal{A} (I) \to \mathcal{A} (I))
+$$
+
+> 命題 4. (C.f. \[[KY1973], Appendix 2\])
+> 
+> $$
+\begin{align*} & \dim \mathrm{Ker} (P \colon \mathcal{A} (I) \to \mathcal{A} (I)) - \dim \mathrm{Coker} (P \colon \mathcal{A} (I) \to \mathcal{A} (I)) \\ & = m - \sum_{x \in I} \mathrm{ord}_x a_m . \end{align*}
+$$
+> 
+
+命題4から，
+$\dim \mathrm{Coker} (P \colon \mathcal{A} (I) \to \mathcal{A} (I)) \geq 0$であるから，
+
+$$
+    \dim \mathrm{Ker} (P \colon \mathcal{A} (I) \to \mathcal{A} (I))
+    \geq 
+    m - \sum_{x \in I} \mathrm{ord}_x a_m .
+$$
+
+集合関係として，
+
+$$
+    F^m (I)  \supset C^m (I) \supset \mathcal{A} (I)
+$$
+
+であるから，
+
+$$
+\begin{align*}
+    & \dim \mathrm{Ker} (P \colon F^m (I) \to F^0 (I)) 
+    \\
+    & \geq \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I)) 
+    \\
+    & \geq
+    \dim \mathrm{Ker} (P \colon \mathcal{A} (I) \to \mathcal{A} (I))
+    \\
+    & \geq 
+    m - \sum_{x \in I} \mathrm{ord}_x a_m .
+\end{align*}
+$$
+
+## 上からの評価の証明
+
+方針は
+1. 解空間$\mathrm{Ker} (P \colon F^m (I) \to F^0 (I))$を，より広い空間である佐藤超函数の上に微分方程式を拡張して，
+2. 小松の指数定理\[Kom1971\]で佐藤超函数上の微分方程式の次元を計算し，
+3. 解空間$\mathrm{Ker} (P \colon F^m (I) \to F^0 (I))$の次元を評価する
+
+という感じです．
+
+### $m$階微分可能な関数をSchwartz超関数に埋め込む
+
+$I$上の局所可積分関数の空間$L_{\mathrm{loc}}^1 (I)$をSchwartz超関数の空間$\mathcal{D}^* (I)$に埋め込む写像$\iota_{L}$を定義します．任意の$u \in L_{\mathrm{loc}}^1 (I)$, 任意の台がコンパクトな滑らかな関数の空間$\mathcal{D} (I)$の元$\varphi$に対して，
+
+$$
+    \langle \iota_{L} (u), \varphi \rangle
+    := \int_I u(x) \phi (x) dx
+$$
+
+と定義します．変分法の基本補題より$\iota_{L}$が単射であることがわかります．
+
+この写像$\iota_{L}$を使って，$F^0(I)$をSchwartz超関数の空間$\mathcal{D}^* (I)$に埋め込みます．任意の$u \in F^0 (I)$に対して，$\partial \tilde u = u$となる関数$\tilde u \in F^1 (I)$を取ります，このとき，写像$\iota_{F} \colon F^0 (I) \to \mathcal{D}^* (I)$を，
+
+$$
+    \iota_{F} (u) = \partial \iota_{L} ( \tilde u)
+$$
+
+で定義します．ここで，微分作用素$\partial$はSchwartz超関数の上に拡張します．写像$\iota_{F}$はwell-definedで単射であることがわかります．
+
+また，$\iota_{L}$は$\mathcal{A}(I)$の掛け算とも可換であることが知られています．加えて，$\iota_{L}$によって，微分作用素$\partial \colon C^1 (I) \to C^0 (I)$を超関数の微分と可換です，すなわち，$C^1 (I)$の上で$\iota_L \partial = \partial \iota_L$です．このことから，$\iota_{F}$は微分と可換で，$\mathcal{A}(I)$の掛け算とも可換であることが従います．
+つまり，$F^m(I)$において，微分作用素$P$と写像$\iota_F$は可換です．
+
+以上をまとめると，単射な写像$\iota_{F}$によって，
+
+$$
+    \mathrm{Ker} (P \colon F^m (I) \to F^0 (I))
+    \subset_{\iota_F}
+    \mathrm{Ker} (P \colon \mathcal{D}^* (I) \to \mathcal{D}^* (I))
+$$
+
+となります．
+
+### Schwartz超関数を佐藤超函数に埋め込む
+
+この節では，Schwartz超関数の上の微分方程式を佐藤超函数の上の微分方程式に拡張します．区間$I$の上の佐藤超函数を$\mathcal{B} (I)$とします．
+
+> 命題 5. (\[[Sat1958],$\S 1$\], c.f. \[[KY1973]\])
+> 単射な写像$\iota_{\mathcal{D}^*} \colon \mathcal{D}^* (I) \to \mathcal{B} (I)$であって，微分と可換で，$\mathcal{A}(I)$の掛け算とも可換であるものが存在します．このことから，$F^m(I)$において，微分作用素$P$と写像$\iota_{\mathcal{D}^*} \circ \iota_{F}$は可換です．
+
+以上をまとめると，単射な写像$\iota_{\mathcal{D}^*} \circ \iota_{F}$によって，
+
+$$
+    \mathrm{Ker} (P \colon F^m (I) \to F^0 (I))
+    \subset_{\iota_{\mathcal{D}^*} \circ \iota_{F}}
+    \mathrm{Ker} (P \colon \mathcal{B} (I) \to \mathcal{B} (I))
+$$
+
+となります．
+
+### 小松の指数定理
+
+佐藤超函数の上の微分方程式の解空間の次元についての公式が次の命題で知られています．
+
+> 命題6. (小松の指数定理 [Kom1971], c.f. \[[KY1973]\]) 
+>
+> $$
+    \dim \mathrm{Ker} (P \colon \mathcal{B} (I) \to \mathcal{B} (I)) = m + \sum_{x \in I} \mathrm{ord}_x a_m .
+$$
+>
+
+命題6から，
+
+$$
+\begin{align*}
+    & \dim \mathrm{Ker} (P \colon C^m (I) \to C^0 (I))
+    \\   
+    & \leq \dim \mathrm{Ker} (P \colon F^m (I) \to F^0 (I))
+    \\
+    & \leq \dim \mathrm{Ker} (P \colon \mathcal{B} (I) \to \mathcal{B} (I))
+    \\
+    & = m + \sum_{x \in I} \mathrm{ord}_x a_m .
+\end{align*}
+$$
