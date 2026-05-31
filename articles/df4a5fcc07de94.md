@@ -16,7 +16,7 @@ published: true
 
 $$ \rho (X , Y) := \sup_{x \in X} \inf_{y \in Y} \delta (x,y) $$
 
-である．被覆半径$\rho (X , Y)$は$X$と$Y$のHausdroff距離と見なすこともできる．
+である．被覆半径$\rho (X , Y)$は$X$と$Y$のHausdorff距離と見なすこともできる．
 
 今回は，集合$X$から$n$個ランダムに取ったときの，被覆半径は何なのか，特に，期待値はいくらなのかについて考える．
 
