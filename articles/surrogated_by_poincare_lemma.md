@@ -102,10 +102,16 @@ $$
 
 # Poincaréの補題のアイデアを逆最適化問題に適用する
 
-逆最適化の予測損失$\ell_{\mathrm{pre}}$にPoincaréの補題のアイデアを用いると，サロゲート関数は
+逆最適化の予測損失$\ell_{\mathrm{pre}}$，もしくは$g = x^* (\theta) - \hat{x}$として，Poincaréの補題のアイデアを用いると，サロゲート関数$\ell_{\mathrm{sub}}$は
 
 $$
-    \ell_{\mathrm{sub}} (\theta) = \theta^\top (x^* (\theta) - \hat{x})
+\begin{align*}
+    \ell_{\mathrm{sub}} (\theta) 
+    & = \int_0^1 \sum_{i=1}^d \theta_i (x^* ( s \theta) - \hat{x}) ds \\
+    & = \int_0^1 \sum_{i=1}^d \theta_i (x^* ( \theta) - \hat{x}) ds \\
+    & = \int_0^1 \theta^\top (x^* (\theta) - \hat{x}) ds \\
+    & = \theta^\top (x^* (\theta) - \hat{x})
+\end{align*}
 $$
 
 となる．上記のサロゲート関数をsuboptimality損失と呼ぶ．suboptimality損失はLipschitz連続な凸関数であり，その（劣）勾配が$x^* (\theta) - \hat{x}$になることが知られている（[Barman+ 2018][Barman2018], 命題 3.1）．このことから，以下は（ほぼ）同値だと考えられる．
