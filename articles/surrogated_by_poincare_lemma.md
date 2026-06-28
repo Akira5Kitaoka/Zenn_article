@@ -2,7 +2,7 @@
 title: "サロゲートモデル作成のアイデア ～Poincaréの補題を用いて～"
 emoji: "🔑"
 type: "tech"  # tech or idea
-topics: ["math", "機械学習", "微分幾何", "微分形式", "数理最適化"]
+topics: ["math", "機械学習", "微分幾何", "微積分", "数理最適化"]
 published: true
 ---
 
