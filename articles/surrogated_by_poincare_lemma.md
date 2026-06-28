@@ -1,9 +1,9 @@
 ---
-title: "サロゲートモデル作成のアイデア ~Poincaréの補題を用いて~"
+title: "サロゲートモデル作成のアイデア ～Poincaréの補題を用いて～"
 emoji: "🔑"
 type: "tech"  # tech or idea
-topics: ["math", "機械学習", "微分幾何", "微分形式"]
-published: false
+topics: ["math", "機械学習", "微分幾何", "微分形式", "数理最適化"]
+published: true
 ---
 
 
@@ -45,7 +45,7 @@ $$
 
 Poincaréの補題とは，ベクトル値関数$g \colon \mathbb{R}^d \to \mathbb{R}^d$が与えられたとき，$\nabla f = g$となる関数$f \colon \mathbb{R}^d \to \mathbb{R}$が存在するかを判定し，存在すれば具体的に構成できるものである．
 
-> **補題 1.**　(Poincaréの補題 (cf. \[Tsuboi 2008\] ))　ベクトル値関数$g = (g_1 ,\ldots , g_d) \in C^1 ( \mathbb{R}^d , \mathbb{R}^d)$とする．このとき，$\nabla f = g$となる関数$f \in C^1 ( \mathbb{R}^d , \mathbb{R})$が存在する場合，$f$は
+> **補題 1.**　(Poincaréの補題 (cf. \[Tsuboi 2008\]))　ベクトル値関数$g = (g_1 ,\ldots , g_d) \in C^1 ( \mathbb{R}^d , \mathbb{R}^d)$とする．このとき，$\nabla f = g$となる関数$f \in C^1 ( \mathbb{R}^d , \mathbb{R})$が存在する場合，$f$は
 >
 > $$
     f(\theta) - f(0) = \int_0^1 \sum_{i=1}^d \theta_i g_i ( s \theta ) ds
@@ -134,8 +134,8 @@ $$
 
 \[[Barman+ 2018][Barman2018]\] Andreas Bärmann, Alexander Martin, Sebastian Pokutta, Oskar Schneider, An Online-Learning Approach to Inverse Optimization, arXiv:1810.12997. 
 
-\[[Kitaoka 2024][Kitaoka2024]\] Akira Kitaoka, Exact Solution to Data-Driven Inverse Optimization of MILPs in Finite Time via Gradient-Based Methods, arXiv:2405.14273. 
+\[[Kitaoka 2024][Kitaoka2024]\] Akira Kitaoka, Exact Solution to Data-Driven Inverse Optimization of MILPs in Finite Time via Gradient-Based Methods, arXiv:2405.14273v7. 
 
 [Barman2018]:https://arxiv.org/abs/1810.12997
 
-[Kitaoka2024]:https://arxiv.org/abs/2405.14273
+[Kitaoka2024]:https://arxiv.org/abs/2405.14273v7
