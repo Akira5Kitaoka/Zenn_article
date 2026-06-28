@@ -102,9 +102,7 @@ $$
 
 # Poincaréの補題のアイデアを逆最適化問題に適用する
 
-逆最適化において，
-$g (\theta ) = x^* (\theta) - \hat{x}$，もしくは，
-逆最適化の予測損失$\ell_{\mathrm{pre}} = \| g \|$として，Poincaréの補題のアイデアを用いると，サロゲート関数$\ell_{\mathrm{sub}}$は
+逆最適化において，$g (\theta ) = x^* (\theta) - \hat{x}$，もしくは，逆最適化の予測損失$\ell_{\mathrm{pre}} = \| g \|$として，Poincaréの補題のアイデアを用いると，サロゲート関数$\ell_{\mathrm{sub}}$は
 
 $$
 \begin{align*}
