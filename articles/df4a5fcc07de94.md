@@ -1,7 +1,7 @@
 ---
 title: "ランダムサンプリングによる被覆半径の期待値"
 emoji: "🎲"
-type: "tech"  # tech or idea
+type: "idea"  # tech or idea
 topics: ["math", "機械学習", "確率", "確率論"]
 published: true
 ---
