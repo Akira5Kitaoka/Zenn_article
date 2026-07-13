@@ -1,9 +1,9 @@
 ---
 title: "ナベアツゼータ関数入門"
-emoji: "🔑"
+emoji: "🔢"
 type: "idea"  # tech or idea
 topics: ["math", "数論", "複素解析"]
-published: false
+published: true
 ---
 
 # これは何？
